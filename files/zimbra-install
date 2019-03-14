@@ -1,0 +1,17 @@
+#if [[ `rpm -qa '(oraclelinux|sl|redhat|centos)-release(|-server)'|cut -d"." -f3` == "el7" ]]; then
+   # echo "Downloading Zimbra Collaboration 8.7.11 for CentOS/RedHat 7"
+   #curl -O -L https://files.zimbra.com/downloads/8.7.11_GA/zcs-8.7.11_GA_1854.RHEL7_64.20170531151956.tgz
+  #tar xzvf zcs-*
+
+
+
+
+echo "Installing Zimbra Collaboration just the Software"
+cd /root/zcs-8.8.5_GA_1894.RHEL7_64.20171026035615  && ./install.sh  < /tmp/installZimbra-keystrokes
+#echo "Installing Zimbra Collaboration injecting the configuration"
+#/opt/zimbra/libexec/zmsetup.pl -c /tmp/installZimbraScript
+su - zimbra -c 'zmcontrol restart'
+echo "You can access now to your Zimbra Collaboration Server"
+echo "Admin Console: https://"$2":7071"
+echo "Web Client: https://"$2
+

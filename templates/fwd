@@ -1,0 +1,19 @@
+$TTL  604800
+@      IN      SOA    ns1.<%= @domain %>. root.localhost. (
+                                20180002        ; Serial
+                        604800        ; Refresh
+                        86400        ; Retry
+                        2419200        ; Expire
+                        604800       ; Negative Cache TTL
+  )
+@     			IN      NS      ns1.<%= @domain %>.
+@    			IN      A      <%= @ip_address %> 
+@	     		IN      MX     10     <%= @host %>.<%= @domain %>.
+<%= @host %>     	IN      A      <%= @ip_address %> 
+ns1     		IN      A      <%= @ip_address %> 
+mail     		IN      A      <%= @ip_address %> 
+pop3     		IN      A      <%= @ip_address %> 
+imap     		IN      A      <%= @ip_address %> 
+imap4     		IN      A      <%= @ip_address %> 
+smtp     		IN      A      <%= @ip_address %> 
+
